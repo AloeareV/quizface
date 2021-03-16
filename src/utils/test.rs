@@ -950,3 +950,34 @@ pub const BINDING_ENFORCE: [(&str, &str); 4] = [
     ("required", "Decimal"),
     ("window", "Decimal"),
 ];
+
+pub fn getaddressdeltas_expected() -> serde_json::Value {
+    serde_json::json!(
+        {
+            "chaininfotrue":{
+                "deltas":[{
+                    "address":"String",
+                    "height":"Decimal",
+                    "index":"Decimal",
+                    "satoshis":"Decimal",
+                    "txid":"String"
+                }],
+                "end":{
+                    "hash":"String",
+                    "height":"Decimal"
+                },
+                "start":{
+                    "hash":"String",
+                    "height":"Decimal"
+                }
+            },
+            "default":[{
+                "address":"String",
+                "height":"Decimal",
+                "index":"Decimal",
+                "satoshis":"Decimal",
+                "txid":"String"
+            }]
+        }
+    )
+}

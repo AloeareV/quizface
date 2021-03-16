@@ -812,4 +812,15 @@ mod unit {
             serde_json::from_reader(reader).unwrap();
         assert_eq!(read_in, getblockchaininfo_interpretation());
     }
+
+    // ----------------new_output_pattern----------------
+    #[test]
+    fn getaddressdeltas_new_pattern() {
+        let (cmd_name, interpretation) = interpret_help_message(
+            std::str::from_utf8(&get_command_help("getaddressdeltas").stdout)
+                .unwrap(),
+        );
+        assert_eq!(cmd_name, "getaddressdeltas");
+        assert_eq!(interpretation, test::getaddressdeltas_expected());
+    }
 }
